@@ -1,0 +1,25 @@
+export JAVA_HOME=`/usr/libexec/java_home -v 17.0.10`
+ /usr/libexec/java_home -V
+  java -version
+
+  ./gradlew bootRun
+
+  ./gradlew build
+
+./gradlew bootRun --continuous
+  CREATE USER 'rafi_test'@'%' IDENTIFIED BY 'pass';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER ON *.* TO 'rafi_test'@'%' WITH GRANT OPTION;
+
+| GRANT ALL PRIVILEGES ON *.* TO `refaelvax`@`localhost` IDENTIFIED VIA mysql_native_password USING 'invalid' OR unix_socket WITH GRANT OPTION                                                                                             |
+| GRANT PROXY ON ''@'%' TO 'refaelvax'@'localhost' WITH GRANT OPTION                                                                                                                                                                       |
+| GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, EVENT, TRIGGER, DELETE HISTORY, SHOW CREATE ROUTINE ON `test`.* TO PUBLIC    |
+| GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, EVENT, TRIGGER, DELETE HISTORY, SHOW CREATE ROUTINE ON `test\_%`.* TO PUBLIC |
+
+| GRANT USAGE ON *.* TO ``@`localhost`                                                                                                                                                                                                     |
+| GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, EVENT, TRIGGER, DELETE HISTORY, SHOW CREATE ROUTINE ON `test`.* TO PUBLIC    |
+| GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, EVENT, TRIGGER, DELETE HISTORY, SHOW CREATE ROUTINE ON `test\_%`.* TO PUBLIC |
+
+GRANT ALL PRIVILEGES TRIGGER ON `users`.* TO 'rafi_test'@'%' WITH GRANT OPTION;
+
+CREATE USER 'rafi_test'@'localhost' IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES  ON users.* to 'rafi_test'@'localhost';
