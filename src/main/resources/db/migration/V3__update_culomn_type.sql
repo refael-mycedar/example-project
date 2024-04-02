@@ -1,0 +1,17 @@
+ALTER TABLE user
+    ADD CONSTRAINT uc_user_email UNIQUE (email);
+
+ALTER TABLE user
+    MODIFY balance BIGINT NULL;
+
+ALTER TABLE user
+    MODIFY email VARCHAR(255) NOT NULL;
+
+ALTER TABLE user
+    MODIFY first_name VARCHAR(50);
+
+ALTER TABLE user
+    MODIFY last_name VARCHAR(50);
+
+ALTER TABLE user
+    MODIFY last_name VARCHAR(50) NOT NULL;
