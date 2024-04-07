@@ -1,0 +1,1 @@
+DROP INDEX uc_user_email ON user;
